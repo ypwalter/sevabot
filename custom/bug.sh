@@ -1,8 +1,14 @@
 #!/bin/bash
 re='^[0-9]+$'
-if ! [[ $1 =~ $re ]] 
+if ! [[ $1 =~ $re ]] || [ "$#" -ne 1 ]
 then
-  echo "Not a valid bug ID"
+  echo "Not a valid bug ID, search link is here"
+  for i in $*;
+  do
+    searchterm=$searchterm"+$i"
+  done
+  url="https://bugzilla.mozilla.org/buglist.cgi?quicksearch=$searchterm"
+  echo $url
 else
   url="https://bugzilla.mozilla.org/show_bug.cgi?id=$1"
   echo $url
