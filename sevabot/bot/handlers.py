@@ -102,7 +102,8 @@ class CommandHandler:
 
             script_module.run(msg, command_args, callback)
         else:
-            msg.Chat.SendMessage("Don't know about command: !" + command_name)
+            #msg.Chat.SendMessage("Don't know about command: !" + command_name)
+            pass
 
     def builtin_reload(self, args, msg, status):
         """Reload command modules.
