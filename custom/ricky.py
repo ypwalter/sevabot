@@ -3,8 +3,9 @@ import json
 import urllib2
 import sys
 
+req = urllib2.Request('https://github.com/mozilla-b2g/gaia/graphs/contributors-data', headers={ 'Accept': 'application/json' })
 try:
-    data = json.load(urllib2.urlopen("https://github.com/mozilla-b2g/gaia/graphs/contributors-data"))
+    data = json.load(urllib2.urlopen(req))
 except ValueError as e:
     print 'Request timeout. Please try again.'
     sys.exit(0)
