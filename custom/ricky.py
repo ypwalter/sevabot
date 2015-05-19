@@ -13,7 +13,7 @@ except ValueError as e:
 ordinal = ['th', 'st', 'nd', 'rd'] + ['th'] * 6
 commits = 0
 for i in xrange(100):
-    if data[i]['author']['login'] == 'RickyChien':
+    if data[i]['author']['login'].lower() == 'rickychien':
         commits = data[i]['total']
         m = 100
         M = 0
