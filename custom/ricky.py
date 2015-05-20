@@ -25,3 +25,6 @@ for i in xrange(100):
         break
 else:
     print 'RickyChien is not one of the top 100 Gaia contributors.'
+
+if os.environ["SKYPE_FULLNAME"] == "taiwan.walter.chen":
+    print "Bad Walter!!"

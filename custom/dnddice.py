@@ -4,6 +4,7 @@
 import re
 import sys
 import random
+import os
 
 progname = 'dnddice'
 version = 'v0.0.1'
@@ -91,3 +92,5 @@ def main(args):
 
 if __name__ == '__main__':
     main(sys.argv[1:])
+    if os.environ["SKYPE_FULLNAME"] == "taiwan.walter.chen":
+        print "Bad Walter!!"
