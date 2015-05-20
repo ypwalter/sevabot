@@ -2,6 +2,11 @@
 import json
 import urllib2
 import sys
+import os
+
+if os.environ["SKYPE_FULLNAME"] == "taiwan.walter.chen":
+    print "Bad Walter!!"
+    sys.exit()
 
 req = urllib2.Request('https://github.com/mozilla-b2g/gaia/graphs/contributors-data', headers={ 'Accept': 'application/json' })
 try:
@@ -27,5 +32,3 @@ for i in xrange(100):
 else:
     print 'RickyChien is not one of the top 100 Gaia contributors.'
 
-if os.environ["SKYPE_FULLNAME"] == "taiwan.walter.chen":
-    print "Bad Walter!!"

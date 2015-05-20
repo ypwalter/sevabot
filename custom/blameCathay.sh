@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 echo "Bad Cathay!!Bad Bad Bad!!"
 
 if [ "$SKYPE_USERNAME" == "taiwan.walter.chen" ]
