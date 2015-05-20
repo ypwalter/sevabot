@@ -19,3 +19,8 @@ else
     | sed -e 's|&ndash;|-|g'\
     | sed -e 's|&quot;|"|g'
 fi
+
+if [ "$SKYPE_USERNAME" == "taiwan.walter.chen" ]
+then
+  . $(dirname $0)/blameWalter.sh
+fi
