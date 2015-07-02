@@ -11,7 +11,7 @@ def main(args):
        return 0
 
     # magic word
-    if args.__len__() == 0:
+    if args.__len__() != 0:
        magic_word = args[random.randint(0, args.__len__() - 1)]   
     else:
        magic_word = ""
