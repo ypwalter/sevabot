@@ -82,6 +82,27 @@ class CommandHandler:
         command_name = words[0]
         command_args = words[1:]
 
+        ### Gong Li special power! (will not execute normal command)
+        for word in words:
+            if word.lower().find("gong") != -1:
+                command_name = "!gong"
+            elif word.lower().find("li") != -1:
+                command_name = "!gong"
+            elif word.find("宮力") != -1:
+                command_name = "!gong"
+
+            if word.find("巴黎") != -1:
+                command_args.append("paris")
+            elif word.lower().find("paris") != -1:
+                command_args.append("paris")
+            elif word.find("舊金山") != -1:
+                command_args.append("sf")
+            elif word.find("sf") != -1:
+                command_args.append("sf")
+            elif word.find("San Francisco") != -1:
+                command_args.append("sf")
+        ### End of Gong Li special power!
+
         # Beyond this point we process script commands only
         if not command_name.startswith('!'):
             return
