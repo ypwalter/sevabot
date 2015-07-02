@@ -83,15 +83,19 @@ class CommandHandler:
         command_args = words[1:]
 
         ### Gong Li special power! (will not execute normal command)
+        if command_name == "!gong":
+            return
+
         for word in words:
-            gong_list = ["gong", "li", "宮力", "宮博"]
+            gong_list = ["gong", "宮力", "宮博", "fish", "魚"]
             for gong in gong_list:
                 if gong in word.lower():
                     command_name = "!gong"
 
-            paris_list = ["巴黎", "paris"]
+            paris_list = ["巴黎", "paris", "法國", "france"]
             sf_list = ["舊金山", "sf", "san francisco"]
-            bj_list = ["北京", "Beijing"]
+            bj_list = ["北京", "beijing", "中國", "china"]
+            taipei_list = ["台北", "taipei", "台灣", "taiwan"]
             for paris in paris_list:
                 if paris in word.lower():
                     command_name = "!gong"
@@ -104,8 +108,10 @@ class CommandHandler:
                 if bj in word.lower():
                     command_name = "!gong"
                     command_args.append("bj")
-
-
+            for tp in taipei_list:
+                if tp in word.lower():
+                    command_name = "!gong"
+                    command_args.append("tp")
         ### End of Gong Li special power!
 
         # Beyond this point we process script commands only
