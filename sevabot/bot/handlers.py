@@ -141,4 +141,5 @@ class CommandHandler:
         """Reload command modules.
         """
         commands = modules.load_modules(self.sevabot)
+        commands.remove("gong")
         msg.Chat.SendMessage('Available commands: %s' % ', '.join(commands))
