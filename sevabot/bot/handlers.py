@@ -84,23 +84,28 @@ class CommandHandler:
 
         ### Gong Li special power! (will not execute normal command)
         for word in words:
-            if word.lower().find("gong") != -1:
-                command_name = "!gong"
-            elif word.lower().find("li") != -1:
-                command_name = "!gong"
-            elif word.find("宮力") != -1:
-                command_name = "!gong"
+            gong_list = ["gong", "li", "宮力", "宮博"]
+            for gong in gong_list:
+                if gong in word.lower():
+                    command_name = "!gong"
 
-            if word.find("巴黎") != -1:
-                command_args.append("paris")
-            elif word.lower().find("paris") != -1:
-                command_args.append("paris")
-            elif word.find("舊金山") != -1:
-                command_args.append("sf")
-            elif word.find("sf") != -1:
-                command_args.append("sf")
-            elif word.find("San Francisco") != -1:
-                command_args.append("sf")
+            paris_list = ["巴黎", "paris"]
+            sf_list = ["舊金山", "sf", "san francisco"]
+            bj_list = ["北京", "Beijing"]
+            for paris in paris_list:
+                if paris in word.lower():
+                    command_name = "!gong"
+                    command_args.append("paris")
+            for sf in sf_list:
+                if sf in word.lower():
+                    command_name = "!gong"
+                    command_args.append("sf")
+            for bj in bj_list:
+                if bj in word.lower():
+                    command_name = "!gong"
+                    command_args.append("bj")
+
+
         ### End of Gong Li special power!
 
         # Beyond this point we process script commands only
