@@ -129,7 +129,7 @@ class CommandHandler:
 
             # Only 3% of possibility to trigger POWER OF GONG
             if command_name == "!gong":
-                if random.randint(1, 100) < 97:
+                if random.randint(1, 100) < 95:
                     return
         ### End of Gong Li special power!
 
